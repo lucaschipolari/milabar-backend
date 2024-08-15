@@ -2,6 +2,7 @@
   "name": "milabar-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "esbuild src/index.js --bundle --platform=node --outfile=dist/index.cjs --minify",
     "start": "node --env-file=.env dist/index.cjs",
