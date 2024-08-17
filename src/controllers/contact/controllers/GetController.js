@@ -4,7 +4,9 @@ import { internalError } from '../../../helpers/helpers.js';
 export class GetController {
   static async getContact(_, res) {
     try {
-      const data = await ContactModel.find();
+      const data = await ContactModel.find({
+        isActive: true,
+      });
 
       const filteredData = data.map((contact) => {
         return {
