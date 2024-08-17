@@ -15,3 +15,5 @@ userRouterPrueba.get('/users/enabled', GetController.getUsersAble);
 
 // Ruta para obtener usuarios deshabilitados
 userRouterPrueba.get('/users/disabled', GetController.getUsersDisable);
+
+userRouterPrueba.get('/users/detail/:id', GetController.getUserById);
