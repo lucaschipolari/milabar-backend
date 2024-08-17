@@ -11,7 +11,7 @@ export class PutController{
         try{
             const action = await ProductoModel.updateOne({
                 _id:id,
-            }, body,);
+            }, body);
             
             if(action.matchedCount === 0){
                 res.status(HttpCodes.BAD_REQUEST).json({
