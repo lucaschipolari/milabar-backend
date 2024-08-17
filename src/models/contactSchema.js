@@ -21,6 +21,10 @@ const Contact = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isActive: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 export default mongoose.model('Contacts', Contact);
