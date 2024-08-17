@@ -1,5 +1,5 @@
-import HttpCodes from 'http-status-codes';
 import ContactModel from '../../../models/contactSchema.js';
+import { internalError } from '../../../helpers/helpers.js';
 
 export class GetController {
   static async getContact(_, res) {
@@ -19,14 +19,10 @@ export class GetController {
 
       res.json({
         data: filteredData,
-        message: null,
+        message: 'mensaje encontrado correctamente',
       });
     } catch (e) {
-      console.error(e);
-      res.status(HttpCodes.INTERNAL_SERVER_ERROR).json({
-        data: null,
-        message: 'Ocurrio un error al leer la lista de mensajes',
-      });
+      internalError(res, e, 'Ocurrio un error al leer la lista de mensajes');
     }
   }
 }
