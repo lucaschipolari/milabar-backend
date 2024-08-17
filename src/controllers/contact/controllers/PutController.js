@@ -22,6 +22,7 @@ export class PutController {
           data: null,
           message: 'El mensaje indicado no fue encontrado',
         });
+        return;
       }
 
       res.json({

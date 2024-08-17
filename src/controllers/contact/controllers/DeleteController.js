@@ -24,6 +24,7 @@ export class DeleteController {
           data: null,
           message: 'El mensaje indicado no fue encontrado',
         });
+        return;
       }
 
       res.json({
