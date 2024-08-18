@@ -19,7 +19,7 @@ export class GetController{
                     unidadmedida:producto._doc.unidadmedida,
                     preciounitario:producto._doc.preciounitario,
                     imagen:producto._doc.imagen,
-                    estaHabilitado:producto._doc.estaHabilitado
+                    habilitado:producto._doc.habilitado
                 }
             })
     
