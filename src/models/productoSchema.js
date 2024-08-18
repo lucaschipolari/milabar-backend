@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const Producto = new mongoose.Schema({
+
     nombre:{
         type:String,
         required:true,
@@ -33,6 +34,7 @@ const Producto = new mongoose.Schema({
         type:Boolean,
         default:true,
     }
+
 });
 
 export default mongoose.model('Productos', Producto);

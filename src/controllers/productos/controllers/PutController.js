@@ -30,7 +30,7 @@ export class PutController{
                 e,
                 'Ocurrió un error actualizando el recurso indicado',
             );
-        
+
     }
-}
+  }
 }

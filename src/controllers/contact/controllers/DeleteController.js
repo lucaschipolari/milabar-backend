@@ -1,15 +1,15 @@
 import HttpCodes from 'http-status-codes';
-
-import ProductoModel from '../../../models/productoSchema.js';
+import ContactModel from '../../../models/contactSchema.js';
 import { internalError } from '../../../helpers/helpers.js';
 
 export class DeleteController {
-  static async deleteProductos(req, res) {
+  static async deleteContact(req, res) {
     const {
       params: { id },
     } = req;
+
     try {
-      const action = await ProductoModel.updateOne(
+      const action = await ContactModel.updateOne(
         {
           _id: id,
           isActive: true,
@@ -18,19 +18,21 @@ export class DeleteController {
           isActive: false,
         },
       );
+
       if (action.matchedCount === 0) {
         res.status(HttpCodes.BAD_REQUEST).json({
           data: null,
-          message: 'El producto indicado no fue encontrado',
+          message: 'El mensaje indicado no fue encontrado',
         });
         return;
       }
+
       res.json({
         data: null,
-        message: 'Producto eliminado correctamente',
+        message: 'Mensaje eliminado correctamente',
       });
     } catch (e) {
-      internalError(res, e, 'Ocurrió un error eliminando el recurso indicado');
+      internalError(res, e, 'Ocurrio un error eliminando el recurso indicado');
     }
   }
 }
