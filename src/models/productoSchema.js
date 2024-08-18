@@ -25,10 +25,9 @@ const Producto = new mongoose.Schema({
         type:String,
         required:true,
     },
-    estaHabilitado:{
-        type:Boolean,
+    habilitado:{
+        type:String,
         required:true,
-        default:true,
     },
     isActive:{
         type:Boolean,

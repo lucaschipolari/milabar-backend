@@ -48,12 +48,12 @@ export class GetController{
             const formattedData = {
                 id:data._doc._id,
                 nombre:data._doc.nombre,
-                descripcion:producto._doc.descripcion,
-                categoria:producto._doc.categoria,
-                unidadmedida:producto._doc.unidadmedida,
-                preciounitario:producto._doc.preciounitario,
-                imagen:producto._doc.imagen,
-                estaHabilitado:producto._doc.estaHabilitado
+                descripcion:data._doc.descripcion,
+                categoria:data._doc.categoria,
+                unidadmedida:data._doc.unidadmedida,
+                preciounitario:data._doc.preciounitario,
+                imagen:data._doc.imagen,
+                habilitado:data._doc.habilitado
             }
     
             res.json({
