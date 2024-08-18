@@ -36,6 +36,7 @@ export class GetController{
         }
         
     }
+
     static async getProducto(req,res){
         const {params:{id}}=req;
         try{
