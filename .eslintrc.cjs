@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 module.exports = {
   env: {
     es6: true,
@@ -10,6 +11,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
     'no-console': 'off',
+    "prettier/prettier": "off",
   },
   ignorePatterns: ['**/node_modules/**', '**/dist/**'],
   extends: ['airbnb-base', 'plugin:prettier/recommended'],

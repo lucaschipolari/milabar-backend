@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import { mainRouter } from './routes/mainRouter.js';
+
 const app = express();
 
 app.use(morgan("dev"));
