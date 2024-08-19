@@ -3,6 +3,7 @@ import ProductoModel from '../../../models/productoSchema.js';
 import { internalError } from '../../../helpers/helpers.js';
 
 export class PostController {
+
     static async postProductos(req,res){
         const {body}=req;
         const newProducto = new ProductoModel({
@@ -12,7 +13,7 @@ export class PostController {
             unidadmedida:body.unidadmedida,
             preciounitario:body.preciounitario,
             imagen:body.imagen,
-            estaHabilitado:body.estaHabilitado,
+            habilitado:body.habilitado,
         });
         try{
             await newProducto.save();
@@ -28,4 +29,5 @@ export class PostController {
             );
         }
     }
+  }
 }

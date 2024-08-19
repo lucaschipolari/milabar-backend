@@ -2,13 +2,25 @@ import HttpCodes from 'http-status-codes';
 import ProductoModel from '../../../models/productoSchema.js';
 import { internalError } from '../../../helpers/helpers.js';
 
+export class GetController {
+  static async getProductos(_, res) {
+    try {
+      const data = await ProductoModel.find({
+        isActive: true,
+      });
 
-export class GetController{
-    static async getProductos(_,res){
-        try{
-            const data = await ProductoModel.find({
-                isActive:true,
-            });
+      const filteredData = data.map((producto) => {
+        return {
+          id: producto._doc._id,
+          nombre: producto._doc.nombre,
+          descripcion: producto._doc.descripcion,
+          categoria: producto._doc.categoria,
+          unidadmedida: producto._doc.unidadmedida,
+          preciounitario: producto._doc.preciounitario,
+          imagen: producto._doc.imagen,
+          estaHabilitado: producto._doc.estaHabilitado,
+        };
+      });
 
             const filteredData = data.map((producto)=>{
                 return{
@@ -19,7 +31,7 @@ export class GetController{
                     unidadmedida:producto._doc.unidadmedida,
                     preciounitario:producto._doc.preciounitario,
                     imagen:producto._doc.imagen,
-                    estaHabilitado:producto._doc.estaHabilitado
+                    habilitado:producto._doc.habilitado
                 }
             })
     
@@ -36,6 +48,7 @@ export class GetController{
         }
         
     }
+
     static async getProducto(req,res){
         const {params:{id}}=req;
         try{
@@ -47,12 +60,12 @@ export class GetController{
             const formattedData = {
                 id:data._doc._id,
                 nombre:data._doc.nombre,
-                descripcion:producto._doc.descripcion,
-                categoria:producto._doc.categoria,
-                unidadmedida:producto._doc.unidadmedida,
-                preciounitario:producto._doc.preciounitario,
-                imagen:producto._doc.imagen,
-                estaHabilitado:producto._doc.estaHabilitado
+                descripcion:data._doc.descripcion,
+                categoria:data._doc.categoria,
+                unidadmedida:data._doc.unidadmedida,
+                preciounitario:data._doc.preciounitario,
+                imagen:data._doc.imagen,
+                habilitado:data._doc.habilitado
             }
     
             res.json({
@@ -68,4 +81,12 @@ export class GetController{
         }
     }
 
+      res.json({
+        data: formattedData,
+        message: 'Producto encontrado correctamente',
+      });
+    } catch (e) {
+      internalError(res, e, 'Ocurrió un error al leer la lista de productos');
+    }
+  }
 }

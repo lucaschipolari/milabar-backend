@@ -11,7 +11,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
     'no-console': 'off',
-    "prettier/prettier": "off",
+    'prettier/prettier': 0,
   },
   ignorePatterns: ['**/node_modules/**', '**/dist/**'],
   extends: ['airbnb-base', 'plugin:prettier/recommended'],

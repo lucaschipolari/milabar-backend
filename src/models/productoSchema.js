@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const Producto = new mongoose.Schema({
+
     nombre:{
         type:String,
         required:true,
@@ -25,15 +26,15 @@ const Producto = new mongoose.Schema({
         type:String,
         required:true,
     },
-    estaHabilitado:{
-        type:Boolean,
+    habilitado:{
+        type:String,
         required:true,
-        default:true,
     },
     isActive:{
         type:Boolean,
         default:true,
     }
+
 });
 
 export default mongoose.model('Productos', Producto);
