@@ -19,7 +19,8 @@ export class GetController{
                     unidadmedida:producto._doc.unidadmedida,
                     preciounitario:producto._doc.preciounitario,
                     imagen:producto._doc.imagen,
-                    habilitado:producto._doc.habilitado
+                    habilitado:producto._doc.habilitado,
+                    agregado:producto._doc.agregado,
                 }
             })
     
@@ -52,7 +53,8 @@ export class GetController{
                 unidadmedida:data._doc.unidadmedida,
                 preciounitario:data._doc.preciounitario,
                 imagen:data._doc.imagen,
-                habilitado:data._doc.habilitado
+                habilitado:data._doc.habilitado,
+                agregado:data._doc.agregado
             }
     
             res.json({

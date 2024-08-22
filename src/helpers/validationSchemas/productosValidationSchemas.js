@@ -40,4 +40,8 @@ export const post_put_productoValidationSchema = Joi.object({
     'any.required': "El campo 'habilitado' es requerido",
     '*': "Revisa el campo 'habilitado'",
   }),
+  agregado: Joi.string().required().messages({
+    'any.required': "El campo 'agregado' es requerido",
+    '*': "Revisa el campo 'agregado'",
+  }),
 });
