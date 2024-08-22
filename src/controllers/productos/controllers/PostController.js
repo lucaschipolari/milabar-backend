@@ -14,6 +14,7 @@ export class PostController {
             preciounitario:body.preciounitario,
             imagen:body.imagen,
             habilitado:body.habilitado,
+            agregado:body.agregado
         });
         try{
             await newProducto.save();

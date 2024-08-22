@@ -30,6 +30,10 @@ const Producto = new mongoose.Schema({
         type:String,
         required:true,
     },
+    agregado:{
+        type:String,
+        required:true,
+    },
     isActive:{
         type:Boolean,
         default:true,
