@@ -30,11 +30,10 @@ const ShoppingCart = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  tableNumber: {
+    type: Number,
+    required: true,
+  },
 });
-
-// ShoppingCart.pre('save', function (next) {
-//   this.totalPrice = this.price * this.quantity;
-//   next();
-// });
 
 export default mongoose.model('ShoppingCart', ShoppingCart);
