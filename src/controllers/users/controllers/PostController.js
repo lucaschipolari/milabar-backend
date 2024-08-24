@@ -1,4 +1,4 @@
-import UserModel from '../../../models/UserSchemaPrueba.js';
+import UserModel from '../../../models/UserSchema.js';
 
 export class PostController {
   static async createUser(req, res) {

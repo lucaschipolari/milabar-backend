@@ -1,4 +1,4 @@
-import User from '../../../models/UserSchemaPrueba.js';
+import User from '../../../models/UserSchema.js';
 
 export class GetController {
   static async getUsersAble(_, res) {
@@ -12,9 +12,7 @@ export class GetController {
           role: user._doc.role,
           orderCount: user._doc.orderCount,
           avatar: user._doc.avatar,
-          createdAt: user._doc.createdAt,
-          updatedAt: user._doc.updatedAt,
-          isEnabled: user._doc.isEnabled, // Added property for enabling/disabling user
+          isEnabled: user._doc.isEnabled, 
         };
       });
       res.json({ data: filteredUsers, message: null });
@@ -34,9 +32,7 @@ export class GetController {
           role: user._doc.role,
           orderCount: user._doc.orderCount,
           avatar: user._doc.avatar,
-          createdAt: user._doc.createdAt,
-          updatedAt: user._doc.updatedAt,
-          isEnabled: user._doc.isEnabled, // Added property for enabling/disabling user
+          isEnabled: user._doc.isEnabled, 
         };
       });
       res.json({ data: filteredUsers, message: null });
@@ -60,9 +56,7 @@ export class GetController {
         role: user._doc.role,
         orderCount: user._doc.orderCount,
         avatar: user._doc.avatar,
-        createdAt: user._doc.createdAt,
-        updatedAt: user._doc.updatedAt,
-        isEnabled: user._doc.isEnabled, // Added property for enabling/disabling user
+        isEnabled: user._doc.isEnabled, 
       };
       res.json({ data: userFiltered, message: null });
     } catch (e) {

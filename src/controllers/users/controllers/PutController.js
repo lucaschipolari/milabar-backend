@@ -1,4 +1,6 @@
-import User from '../../../models/UserSchemaPrueba.js';
+import HttpCodes from 'http-status-codes';
+import User from '../../../models/UserSchema.js';
+import { internalError } from '../../../helpers/helpers.js';
 
 export class PutController {
   static async toggleUserStatus(req, res) {
@@ -25,4 +27,35 @@ export class PutController {
       res.status(500).json({ message: 'Server Error' });
     }
   }
+
+  static async putUsers(req,res){
+    const{
+        body,
+        params:{id},
+    }=req;
+    try{
+        const action = await User.updateOne({
+            _id:id,
+        }, body);
+        
+        if(action.matchedCount === 0){
+            res.status(HttpCodes.BAD_REQUEST).json({
+                data:null,
+                message:'El usuario no existe',
+            });
+            return;
+        }
+        res.json({
+            data:null,
+            message:'Usuario actualizado correctamente'
+        });
+    }catch(e){
+        internalError(
+            res,
+            e,
+            'Ocurrió un error actualizando el recurso indicado',
+        );
+
+}
+}
 }
