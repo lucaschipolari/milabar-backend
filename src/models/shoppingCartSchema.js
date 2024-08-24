@@ -34,6 +34,9 @@ const ShoppingCart = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  details: {
+    type: String,
+  },
 });
 
 export default mongoose.model('ShoppingCart', ShoppingCart);
