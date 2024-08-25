@@ -3,22 +3,20 @@ import express from 'express';
 import {productoRouter} from './routers/productoRouter.js';
 import authRoutes from './routers/auth.js';
 
-import { productoRouter } from './routers/productoRouter.js';
-
 import { contactRouter } from './routers/contactRouter.js';
-import { userRouterPrueba } from './routers/userRouterPrueba.js';
+import { userRouterPrueba } from './routers/userRouter.js';
 
-
+import { userRouter } from './routers/userRouter.js';
 
 export const mainRouter = express.Router();
 
 mainRouter.use('/productos', productoRouter);
-
-
 
 mainRouter.use('/auth', authRoutes);
 
 mainRouter.use('/contact', contactRouter);
 
 mainRouter.use('/usersPrueba', userRouterPrueba);
+
+mainRouter.use('/profile', userRouter);
 
