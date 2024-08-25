@@ -11,7 +11,7 @@ export class PostController {
     try {
       const user = await User.findOne({
         email: body.email,
-        isActive: true,
+        isEnabled: true,
       });
 
       if (!user) {
