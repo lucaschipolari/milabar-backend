@@ -12,7 +12,8 @@ export class PostController {
       unidadmedida: body.unidadmedida,
       preciounitario: body.preciounitario,
       imagen: body.imagen,
-      estaHabilitado: body.estaHabilitado,
+      habilitado: body.habilitado,
+      agregado: body.agregado,
     });
     try {
       await newProducto.save();

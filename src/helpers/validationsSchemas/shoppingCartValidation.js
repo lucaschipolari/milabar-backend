@@ -32,4 +32,39 @@ export const post_shoppingCartValidationSchema = Joi.object({
       }
       return value;
     }),
+  products: Joi.array()
+    .items(
+      Joi.object({
+        id: Joi.string().required().messages({
+          'string.base': 'El ID del producto debe ser un texto',
+          'string.required': 'El ID del producto es obligatorio',
+        }),
+        name: Joi.string().required().messages({
+          'string.base': 'El nombre del producto debe ser un texto',
+          'string.required': 'El nombre del producto es obligatorio',
+        }),
+        price: Joi.number().required().messages({
+          'number.base': 'El precio del producto debe ser un número',
+          'number.required': 'El precio del producto es obligatorio',
+        }),
+        quantity: Joi.number().required().min(1).messages({
+          'number.base': 'La cantidad del producto debe ser un número',
+          'number.required': 'La cantidad del producto es obligatoria',
+          'number.min': 'La cantidad del producto debe ser al menos 1',
+        }),
+        image: Joi.string().optional().messages({
+          'string.base': 'La imagen del producto debe ser un texto',
+        }),
+      }),
+    )
+    .required()
+    .messages({
+      'array.base': 'El campo productos debe ser un arreglo',
+      'array.required': 'El campo productos es obligatorio',
+    }),
+  total: Joi.number().required().min(0).messages({
+    'number.base': 'El total debe ser un número',
+    'number.required': 'El total es obligatorio',
+    'number.min': 'El total no puede ser menor que 0',
+  }),
 });
