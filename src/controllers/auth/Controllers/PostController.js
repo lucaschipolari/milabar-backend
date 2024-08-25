@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken';
 import User from '../../../models/UserSchema.js';
 
 export class PostController{
-  // Registro de usuario
  static async register  (req, res)  {
   try {
     const { username, email, password } = req.body;

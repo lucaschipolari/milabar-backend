@@ -19,7 +19,7 @@ mainRouter.use('/contact', contactRouter);
 
 mainRouter.use('/shoppingCart', shoppingCartRouter);
 
-mainRouter.use('/usersPrueba', userRouterPrueba);
+mainRouter.use('/users', userRouter);
 
 mainRouter.use('/profile', userRouter);
 
