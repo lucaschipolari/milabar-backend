@@ -1,5 +1,6 @@
 import express from 'express';
-import { isAuthenticated, isMyAccount } from '../../middlewares/isAuthenticated.js';
+import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
+import { isMyAccount } from '../../middlewares/isMyAccount.js';
 import { PostController } from '../../controllers/users/controllers/PostController.js';
 import { PutController } from '../../controllers/users/controllers/PutController.js';
 import { GetController } from '../../controllers/users/controllers/GetController.js';
@@ -20,6 +21,6 @@ userRouterPrueba.get('/users/disabled', GetController.getUsersDisable);
 
 userRouterPrueba.get('/users/detail/:id', GetController.getUserById);
 
-userRouter.get('/my-account/:id', isAuthenticated, isMyAccount, GetController.getUserById);
+userRouter.get('/:id', GetController.getUserById);
 
-userRouter.put('/my-account/detail/:id', isAuthenticated, isMyAccount, PutController.putUsers);
+userRouter.put('/:id', PutController.putUsers);
