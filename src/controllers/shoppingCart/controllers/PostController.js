@@ -4,13 +4,14 @@ import { internalError } from '../../../helpers/helpers.js';
 
 export class PostController {
   static async addProductToCart(req, res) {
-    const { products, total, tableNumber, details } = req.body;
+    const { products, total, tableNumber, details, userId } = req.body;
     console.log(req.body)
     const newCart = new ShoppingModel({
       products,
       total,
       tableNumber,
       details,
+      userId,
     });
 
     try {
