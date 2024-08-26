@@ -8,7 +8,7 @@ import { GetController } from '../../controllers/users/controllers/GetController
 export const userRouterPrueba = express.Router();
 export const userRouter = express.Router();
 
-userRouterPrueba.post('/users', PostController.createUser);
+userRouter.post('/register', PostController.postUser);
 
 // Ruta para habilitar/deshabilitar un usuario
 userRouterPrueba.put('/users/:id', PutController.toggleUserStatus);

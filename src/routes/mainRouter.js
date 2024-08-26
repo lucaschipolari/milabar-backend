@@ -13,13 +13,13 @@ export const mainRouter = express.Router();
 
 mainRouter.use('/productos', productoRouter);
 
-mainRouter.use('/auth', authRoutes);
+mainRouter.use('/users', authRoutes);
 
 mainRouter.use('/contact', contactRouter);
 
 mainRouter.use('/shoppingCart', shoppingCartRouter);
 
-mainRouter.use('/usersPrueba', userRouterPrueba);
+mainRouter.use('/users', userRouter);
 
 mainRouter.use('/profile', userRouter);
 
