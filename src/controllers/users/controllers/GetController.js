@@ -12,7 +12,7 @@ export class GetController {
           role: user._doc.role,
           orderCount: user._doc.orderCount,
           avatar: user._doc.avatar,
-          isEnabled: user._doc.isEnabled, 
+          isEnabled: user._doc.isEnabled,
         };
       });
       res.json({ data: filteredUsers, message: null });
@@ -32,7 +32,7 @@ export class GetController {
           role: user._doc.role,
           orderCount: user._doc.orderCount,
           avatar: user._doc.avatar,
-          isEnabled: user._doc.isEnabled, 
+          isEnabled: user._doc.isEnabled,
         };
       });
       res.json({ data: filteredUsers, message: null });
@@ -42,9 +42,10 @@ export class GetController {
   }
 
   static async getUserById(req, res) {
-    const { id } = req.params;
     try {
-      const user = await User.findById(id);
+      const userId = req.user.id;
+      console.log(userId);
+      const user = await User.findById(userId);
 
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
@@ -56,7 +57,7 @@ export class GetController {
         role: user._doc.role,
         orderCount: user._doc.orderCount,
         avatar: user._doc.avatar,
-        isEnabled: user._doc.isEnabled, 
+        isEnabled: user._doc.isEnabled,
       };
       res.json({ data: userFiltered, message: null });
     } catch (e) {
