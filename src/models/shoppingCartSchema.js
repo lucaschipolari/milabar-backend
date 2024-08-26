@@ -37,6 +37,10 @@ const ShoppingCart = new mongoose.Schema({
   details: {
     type: String,
   },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 export default mongoose.model('ShoppingCart', ShoppingCart);

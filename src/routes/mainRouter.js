@@ -1,6 +1,6 @@
 import express from 'express';
 
-import {productoRouter} from './routers/productoRouter.js';
+import { productoRouter } from './routers/productoRouter.js';
 import authRoutes from './routers/auth.js';
 
 import { contactRouter } from './routers/contactRouter.js';
@@ -22,5 +22,3 @@ mainRouter.use('/shoppingCart', shoppingCartRouter);
 mainRouter.use('/users', userRouter);
 
 mainRouter.use('/profile', userRouter);
-
-
