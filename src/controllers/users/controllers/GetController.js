@@ -1,3 +1,4 @@
+import { isAdmin } from '../../../middlewares/isAdmin.js';
 import User from '../../../models/UserSchema.js';
 
 export class GetController {
@@ -58,6 +59,31 @@ export class GetController {
         orderCount: user._doc.orderCount,
         avatar: user._doc.avatar,
         isEnabled: user._doc.isEnabled,
+        isAdmin: user._doc.isAdmin,
+      };
+      res.json({ data: userFiltered, message: null });
+    } catch (e) {
+      res.status(500).json({ message: 'Error fetching user' });
+    }
+  }
+
+  static async getUserByIdGeneral(req, res) {
+    const { id } = req.params;
+    try {
+      const user = await User.findById(id);
+
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      const userFiltered = {
+        id: user._id,
+        username: user._doc.username,
+        email: user._doc.email,
+        role: user._doc.role,
+        orderCount: user._doc.orderCount,
+        avatar: user._doc.avatar,
+        isEnabled: user._doc.isEnabled,
+        isAdmin: user._doc.isAdmin,
       };
       res.json({ data: userFiltered, message: null });
     } catch (e) {

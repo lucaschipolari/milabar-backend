@@ -1,10 +1,8 @@
 import express from 'express';
 import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
-import { isMyAccount } from '../../middlewares/isMyAccount.js';
 
 import { Auth } from '../../controllers/auth/index.js';
 import { Users } from '../../controllers/users/index.js';
-import { isAdmin } from '../../middlewares/isAdmin.js';
 
 export const userRouter = express.Router();
 

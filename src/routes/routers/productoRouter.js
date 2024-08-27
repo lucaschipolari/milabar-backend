@@ -17,7 +17,12 @@ productoRouter.post(
 );
 productoRouter.get('/', Productos.GetController.getProductos);
 
-productoRouter.get('detalle/:id', Productos.GetController.getProducto);
+productoRouter.get(
+  'detalle/:id',
+  isAuthenticated,
+  isAdmin,
+  Productos.GetController.getProducto,
+);
 productoRouter.put(
   '/detalle/:id',
   isAuthenticated,
