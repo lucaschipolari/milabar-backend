@@ -43,12 +43,12 @@ Ultimo Proyecto de Rolling
 
 ## API Documentation: `/api/v1/user-info`
 
-| Method | Endpoint            | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
-|--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
 
-| PUT    | `/status/:id`    |✅         | ✅             | Actualiza un usuario     | Cualquier campo del usuario que se quiera actualizar excepto el rol |
-| GET    | `/status/enabled`    |✅         | ✅             | Recupera los usuarios activos     | N/A |
-| GET    | `/status/disabled`    |✅         | ✅             | Recupera los usuarios inactivos     | N/A |
-| GET    | `/status/detail/:id`    |✅         | ✅             | Recupera un usuario activo específico     | N/A |
+| Method | Endpoint              | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
+|--------|-----------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+| PUT    | `/status/:id`          | ✅         | ✅             | Actualiza un usuario                    | Cualquier campo del usuario que se quiera actualizar excepto el rol                                  |
+| GET    | `/status/enabled`      | ✅         | ✅             | Recupera los usuarios activos           | N/A                                                                                                  |
+| GET    | `/status/disabled`     | ✅         | ✅             | Recupera los usuarios inactivos         | N/A                                                                                                  |
+| GET    | `/status/detail/:id`   | ✅         | ✅             | Recupera un usuario activo específico   | N/A                                                                                                  |
 
 
