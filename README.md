@@ -32,6 +32,7 @@ Ultimo Proyecto de Rolling
 |--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
 | POST   | `/register`    | ✅        | ✅           | Guarda un nuevo usuario    | `{ "username": "string", "email": "string", "password": "string" }` | 
 | POST    | `/login`    | ❌        | ❌             | Envia un usuario que desea logearse     | `{ "email": "string", "password": "string" }` |
+| GET    | `/:id`    |✅         | ❌             | Recupera un usuario activo específico     | N/A |
 
 ## API Documentation: `/api/v1/profile`
 
@@ -39,4 +40,15 @@ Ultimo Proyecto de Rolling
 |--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
 | GET    | `/:id`    |✅         | ❌             | Recupera un usuario activo específico     | N/A |
 | PUT    | `/:id`| ✅        | ❌            | Actualiza un usuario        | Cualquier campo del usuario que se quiera actualizar excepto el rol |
+
+## API Documentation: `/api/v1/user-info`
+
+| Method | Endpoint            | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
+|--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+
+| PUT    | `/status/:id`    |✅         | ✅             | Actualiza un usuario     | Cualquier campo del usuario que se quiera actualizar excepto el rol |
+| GET    | `/status/enabled`    |✅         | ✅             | Recupera los usuarios activos     | N/A |
+| GET    | `/status/disabled`    |✅         | ✅             | Recupera los usuarios inactivos     | N/A |
+| GET    | `/status/detail/:id`    |✅         | ✅             | Recupera un usuario activo específico     | N/A |
+
 
