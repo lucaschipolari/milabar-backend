@@ -30,6 +30,7 @@ export class PostController {
         message: 'Usuario guardado correctamente',
       });
     } catch (e) {
+      console.error('Error al registrar usuario:', e);
       internalError(res, e, 'Ocurrió un error en servidor');
     }
   }
