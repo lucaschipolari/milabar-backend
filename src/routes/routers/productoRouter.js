@@ -9,6 +9,6 @@ export const productoRouter = express.Router();
 
 productoRouter.post('/agregar-producto', isAuthenticated, isAdmin, (req,res,next)=>validateBody(req, res, next, post_put_productoValidationSchema), Productos.PostController.postProductos);
 productoRouter.get('/', Productos.GetController.getProductos);
-productoRouter.get('detalle/:id', isAuthenticated, isAdmin, Productos.GetController.getProducto);
+productoRouter.get('/detalle/:id', isAuthenticated, isAdmin, Productos.GetController.getProducto);
 productoRouter.put('/detalle/:id', isAuthenticated, isAdmin,(req,res,next)=>validateBody(req, res, next, post_put_productoValidationSchema), Productos.PutController.putProductos);
 productoRouter.delete('/:id', isAuthenticated, isAdmin, Productos.DeleteController.deleteProductos);
