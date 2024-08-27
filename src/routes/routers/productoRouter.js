@@ -1,7 +1,7 @@
 import express from 'express';
 import { Productos } from '../../controllers/productos/index.js';
 import { validateBody } from '../../middlewares/validateBody.js';
-import { post_put_productoValidationSchema } from '../../helpers/validationSchemas/productosValidationSchemas.js';
+import { post_put_productoValidationSchema } from '../../helpers/validationsSchemas/productosValidationSchemas.js';
 import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
 import { isAdmin } from '../../middlewares/isAdmin.js';
 
@@ -17,12 +17,7 @@ productoRouter.post(
 );
 productoRouter.get('/', Productos.GetController.getProductos);
 
-productoRouter.get(
-  'detalle/:id',
-  isAuthenticated,
-  isAdmin,
-  Productos.GetController.getProducto,
-);
+productoRouter.get('/detalle/:id', Productos.GetController.getProducto);
 productoRouter.put(
   '/detalle/:id',
   isAuthenticated,

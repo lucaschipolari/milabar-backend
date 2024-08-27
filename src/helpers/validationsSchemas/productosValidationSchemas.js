@@ -19,15 +19,11 @@ export const post_put_productoValidationSchema = Joi.object({
     'any.required': "El campo 'categoria' es requerido",
     '*': "Revisa el campo 'categoria'",
   }),
-  unidadmedida: Joi.string().trim().min(1).max(100).required().messages({
-    'string.min': "El campo 'unidadmedida' debe tener como mínimo 1 caracteres",
-    'string.max': "El campo 'unidadmedida' debe tener como mucho 100 caracteres",
-    'any.required': "El campo 'unidadmedida' es requerido",
-    '*': "Revisa el campo 'unidadmedida'",
-  }),
   preciounitario: Joi.number().min(1).max(100000).required().messages({
-    'string.min': "El campo 'preciounitario' debe tener como mínimo 1 caracteres",
-    'string.max': "El campo 'preciounitario' debe tener como mucho 100000 caracteres",
+    'string.min':
+      "El campo 'preciounitario' debe tener como mínimo 1 caracteres",
+    'string.max':
+      "El campo 'preciounitario' debe tener como mucho 100000 caracteres",
     'any.required': "El campo 'preciounitario' es requerido",
     '*': "Revisa el campo 'preciounitario'",
   }),
