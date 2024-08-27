@@ -1,9 +1,6 @@
 import express from 'express';
 import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
-import { isMyAccount } from '../../middlewares/isMyAccount.js';
 import { Users } from '../../controllers/users/index.js';
-import { PutController } from '../../controllers/users/controllers/PutController.js';
-import { GetController } from '../../controllers/users/controllers/GetController.js';
 import { validateBody } from '../../middlewares/validateBody.js';
 import { post_userValidationSchema } from '../../helpers/validationsSchemas/usersValidationSchema.js';
 
