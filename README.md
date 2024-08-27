@@ -20,9 +20,18 @@ Ultimo Proyecto de Rolling
 
 | Method | Endpoint            | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
 |--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
-| POST   | `/agregar-producto`    | ✅        | ✅           | Guarda un nuevo mensaje de producto     | `{ "nombre": "string", "descripcion": "string", "categoria": "string", "preciounitario": "number", "imagen": "string", "habilitado": "boolean", "agregado": "boolean" }` | 
+| POST   | `/agregar-producto`    | ✅        | ✅           | Guarda un nuevo producto     | `{ "nombre": "string", "descripcion": "string", "categoria": "string", "preciounitario": "number", "imagen": "string", "habilitado": "boolean", "agregado": "boolean" }` | 
 | GET    | `/`    | ❌        | ❌             | Recupera todos los productos activos     | N/A 
-| GET    | `/detalle/:id`    |✅         | ✅             | Recupera un los producto activo específico     | N/A |
+| GET    | `/detalle/:id`    |✅         | ✅             | Recupera un producto activo específico     | N/A |
 | PUT    | `/detalle/:id`| ✅        | ✅            | Actualiza un producto        | Cualquier campo del producto que se quiera actualizar                                                  |
 | DELETE | `/:id`| ✅       | ✅            | Marca un producto como inactivo          | N/A   
+
+## API Documentation: `/api/v1/users`
+
+| Method | Endpoint            | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
+|--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+| POST   | `/register`    | ✅        | ✅           | Guarda un nuevo usuario    | `{ "username": "string", "email": "string", "password": "string" }` | 
+| POST    | `/login`    | ❌        | ❌             | Envia un usuario que desea logearse     | `{ "email": "string", "password": "string" }` |
+| GET    | `/:id`    |✅         | ❌             | Recupera un usuario activo específico     | N/A |
+| PUT    | `/:id`| ✅        | ❌            | Actualiza un usuario        | Cualquier campo del usuario que se quiera actualizar excepto el rol |
 
