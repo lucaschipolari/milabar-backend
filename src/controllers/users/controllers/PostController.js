@@ -4,7 +4,6 @@ import HttpCodes from 'http-status-codes';
 import UserModel from '../../../models/UserSchema.js';
 import { internalError } from '../../../helpers/helpers.js';
 
-
 export class PostController {
   static async postUser(req, res) {
     const { body } = req;
@@ -23,17 +22,15 @@ export class PostController {
         password: hashedPassword,
       });
       await newUser.save();
-      const token = jwt.sign(
-        { id: newUser._id },
-        process.env.JWT_SECRET,
-        { expiresIn: '1h' }
-      );
+      const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+        expiresIn: '1h',
+      });
       res.status(HttpCodes.CREATED).json({
         data: null,
         message: 'Usuario guardado correctamente',
       });
     } catch (e) {
-      internalError(res, e, 'Ocurrió un error al guardar el usuario');
+      internalError(res, e, 'Ocurrió un error en servidor');
     }
   }
 }

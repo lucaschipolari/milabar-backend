@@ -8,6 +8,7 @@ export const post_shoppingCartValidationSchema = Joi.object({
     'number.max': 'El número de mesa no puede ser mayor a 20',
   }),
   details: Joi.string()
+    .allow('')
     .min(10)
     .max(500)
     .regex(/^[A-Za-zñÑáéíóúÁÉÍÓÚ0-9\s.,!?()-]*$/)
@@ -67,4 +68,5 @@ export const post_shoppingCartValidationSchema = Joi.object({
     'number.required': 'El total es obligatorio',
     'number.min': 'El total no puede ser menor que 0',
   }),
+  userId: Joi.required(),
 });
