@@ -18,8 +18,10 @@ export const post_put_productoValidationSchema = Joi.object({
     '*': "Revisa el campo 'categoria'",
   }),
   preciounitario: Joi.number().min(1).max(100000).required().messages({
-    'string.min': "El campo 'preciounitario' debe tener como mínimo 1 caracteres",
-    'string.max': "El campo 'preciounitario' debe tener como mucho 1000000 caracteres",
+    'string.min':
+      "El campo 'preciounitario' debe tener como mínimo 1 caracteres",
+    'string.max':
+      "El campo 'preciounitario' debe tener como mucho 100000 caracteres",
     'any.required': "El campo 'preciounitario' es requerido",
     '*': "Revisa el campo 'preciounitario'",
   }),
