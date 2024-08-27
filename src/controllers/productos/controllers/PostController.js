@@ -9,7 +9,6 @@ export class PostController {
       nombre: body.nombre,
       descripcion: body.descripcion,
       categoria: body.categoria,
-      unidadmedida: body.unidadmedida,
       preciounitario: body.preciounitario,
       imagen: body.imagen,
       habilitado: body.habilitado,

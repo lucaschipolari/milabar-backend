@@ -18,7 +18,7 @@ export const isAuthenticated = (req, res, next) => {
   const token = authorizationHeader.split(' ')[1];
 
   try {
-    const data = jwt.verify(token, process.env.SECRET_KEY);
+    const data = jwt.verify(token, process.env.JWT_SECRET);
 
     // Agregamos el campo "user" a la request para futuro uso
     req.user = data.user;
