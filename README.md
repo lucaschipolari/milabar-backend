@@ -15,4 +15,14 @@ Ultimo Proyecto de Rolling
 
 | Method | Endpoint                | Protegido | Debe ser Admin | Descripción                                    | Body                                                                                                                   |
 |--------|-------------------------|-----------|----------------|------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| POST   | `/`   | ✅        | ❌             | Agrega un producto al carrito y crea uno nuevo | `{ "products": "array", "total": "number", "tableNumber": "string", "details": "string", "userId": "string" }`        |
+
+## API Documentation: `/api/v1/productos`
+
+| Method | Endpoint            | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
+|--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+| POST   | `/agregar-producto`    | ✅        | ✅           | Guarda un nuevo mensaje de producto     | `{ "nombre": "string", "descripcion": "string", "categoria": "string", "preciounitario": "number", "imagen": "string", "habilitado": "boolean", "agregado": "boolean" }` | 
+| GET    | `/`    | ❌        | ❌             | Recupera todos los productos activos     | N/A 
+| GET    | `/detalle/:id`    |✅         | ✅             | Recupera un los producto activo específico     | N/A |
+| PUT    | `/detalle/:id`| ✅        | ✅            | Actualiza un producto        | Cualquier campo del producto que se quiera actualizar                                                  |
+| DELETE | `/:id`| ✅       | ✅            | Marca un producto como inactivo          | N/A   
+
