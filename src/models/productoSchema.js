@@ -14,10 +14,6 @@ const Producto = new mongoose.Schema({
         type:String,
         required:true,
     },
-    unidadmedida:{
-        type:String,
-        required:true,
-    },
     preciounitario:{
         type:Number,
         required:true,
