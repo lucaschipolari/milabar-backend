@@ -30,11 +30,11 @@ export const post_put_productoValidationSchema = Joi.object({
     'any.required': "El campo 'imagen' es requerido",
     '*': "Revisa el campo 'imagen'",
   }),
-  habilitado: Joi.boolean().required().messages({
+  habilitado: Joi.string().required().messages({
     'any.required': "El campo 'habilitado' es requerido",
     '*': "Revisa el campo 'habilitado'",
   }),
-  agregado: Joi.boolean().required().messages({
+  agregado: Joi.string().required().messages({
     'any.required': "El campo 'agregado' es requerido",
     '*': "Revisa el campo 'agregado'",
   }),
