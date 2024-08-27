@@ -32,6 +32,11 @@ Ultimo Proyecto de Rolling
 |--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
 | POST   | `/register`    | ✅        | ✅           | Guarda un nuevo usuario    | `{ "username": "string", "email": "string", "password": "string" }` | 
 | POST    | `/login`    | ❌        | ❌             | Envia un usuario que desea logearse     | `{ "email": "string", "password": "string" }` |
+
+## API Documentation: `/api/v1/profile`
+
+| Method | Endpoint            | Protegido | Debe ser Admin | Descripción                             | Body                                                                                                 |
+|--------|---------------------|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------|
 | GET    | `/:id`    |✅         | ❌             | Recupera un usuario activo específico     | N/A |
 | PUT    | `/:id`| ✅        | ❌            | Actualiza un usuario        | Cualquier campo del usuario que se quiera actualizar excepto el rol |
 
