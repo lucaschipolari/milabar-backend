@@ -22,11 +22,11 @@ const Producto = new mongoose.Schema({
     required: true,
   },
   habilitado: {
-    type: String,
+    type: Boolean,
     required: true,
   },
   agregado: {
-    type: String,
+    type: Boolean,
     required: true,
   },
   isActive: {
