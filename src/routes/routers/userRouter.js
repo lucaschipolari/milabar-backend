@@ -12,17 +12,11 @@ export const userRouter = express.Router();
 
 userRouter.post('/register',(req, res, next) => validateBody(req, res, next, post_userValidationSchema), Users.PostController.postUser);
 
-// Ruta para habilitar/deshabilitar un usuario
-userRouterPrueba.put('/users/:id', PutController.toggleUserStatus);
+userRouter.post('/register', Users.PostController.postUser);
 
-// Ruta para obtener usuarios habilitados
-userRouterPrueba.get('/users/enabled', GetController.getUsersAble);
+userRouter.post('/login', Auth.PostController.login);
 
-// Ruta para obtener usuarios deshabilitados
-userRouterPrueba.get('/users/disabled', GetController.getUsersDisable);
+userRouter.get('/:id', isAuthenticated, Users.GetController.getUserById);
 
-userRouterPrueba.get('/users/detail/:id', GetController.getUserById);
+userRouter.put('/:id', isAuthenticated, Users.PutController.putUsers);
 
-userRouter.get('/:id', Users.GetController.getUserById);
-
-userRouter.put('/:id', Users.PutController.putUsers);
