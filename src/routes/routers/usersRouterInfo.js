@@ -31,5 +31,5 @@ userRouterInfo.get(
   '/status/detail/:id',
   isAuthenticated,
   isAdmin,
-  Users.GetController.getUserById,
+  Users.GetController.getUserByIdGeneral,
 );
