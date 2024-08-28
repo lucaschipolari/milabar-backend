@@ -5,7 +5,6 @@ import { Users } from '../../controllers/users/index.js';
 import { post_userValidationSchema } from '../../helpers/validationsSchemas/usersValidationSchema.js';
 import { validateBody } from '../../middlewares/validateBody.js';
 
-export const userRouterPrueba = express.Router();
 export const userRouter = express.Router();
 
 userRouter.post(
