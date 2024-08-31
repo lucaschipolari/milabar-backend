@@ -33,7 +33,8 @@ export class PostController {
           id: user._doc._id,
           username: user._doc.username,
           email: user._doc.email,
-          isAdmin: user._doc.isAdmin,
+          roles: user._doc.roles,
+          isEnabled: user._doc.isEnabled,
         },
       };
 
