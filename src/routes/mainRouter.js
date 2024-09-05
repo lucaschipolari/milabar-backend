@@ -7,6 +7,7 @@ import { contactRouter } from './routers/contactRouter.js';
 import { shoppingCartRouter } from './routers/shoppingCartRouter.js';
 import { userRouter } from './routers/userRouter.js';
 import { userRouterInfo } from './routers/usersRouterInfo.js';
+import { rolesRouter } from './routers/rolesRouter.js';
 
 export const mainRouter = express.Router();
 
@@ -21,3 +22,5 @@ mainRouter.use('/users', userRouter);
 mainRouter.use('/profile', userRouter);
 
 mainRouter.use('/user-info', userRouterInfo);
+
+mainRouter.use('/roles', rolesRouter);
