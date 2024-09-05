@@ -12,12 +12,12 @@ export class PostController {
       const user = await User.findOne({
         email: body.email,
         isEnabled: true,
-      });
+      }).populate('roles', 'name');
 
       if (!user) {
         return res.status(HttpCodes.UNAUTHORIZED).json({
           data: null,
-          message: 'El mail no está registrado',
+          message: 'El mail no está registrado o ha sido inhabilitado',
         });
       }
 

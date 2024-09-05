@@ -1,5 +1,7 @@
 import HttpCodes from 'http-status-codes';
+import mongoose from 'mongoose';
 import User from '../../../models/UserSchema.js';
+import Role from '../../../models/roleSchema.js';
 import { internalError } from '../../../helpers/helpers.js';
 
 export class PutController {
@@ -72,11 +74,40 @@ export class PutController {
         message: 'Usuario actualizado correctamente',
       });
     } catch (e) {
+      console.error(e);
       internalError(
         res,
         e,
         'Ocurrió un error actualizando el recurso indicado',
       );
+    }
+  }
+
+  static async updateUserRoles(req, res) {
+    const { id } = req.params;
+    const { roles } = req.body;
+
+    try {
+      const roleDocs = await Role.find({ name: { $in: roles } }); // Busca los roles por nombre
+      const roleIds = roleDocs.map((role) => role._id); // Extrae los ObjectId
+
+      // Actualiza el usuario con los ObjectId de los roles
+      const updatedUser = await User.findByIdAndUpdate(
+        id,
+        { roles: roleIds }, // Actualiza con los ObjectId
+        { new: true }, // Devuelve el documento actualizado
+      );
+      console.log(updatedUser);
+      res.json({
+        data: updatedUser,
+        message: 'Roles actualizados correctamente',
+      });
+    } catch (e) {
+      console.error(e);
+      res.status(500).json({
+        data: null,
+        message: 'Ocurrió un error al actualizar los roles del usuario',
+      });
     }
   }
 }
