@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
 import Role from '../models/roleSchema.js';
 import User from '../models/UserSchema.js';
+import Category from '../models/categorySchema.js';
 
 export const createRoles = async () => {
   try {
@@ -46,5 +47,29 @@ export const initializeAdmin = async () => {
     }
   } catch (error) {
     console.error('Error al inicializar el administrador:', error);
+  }
+};
+
+export const initializeCategory = async () => {
+  try {
+    const count = await Category.estimatedDocumentCount();
+    if (count > 0) return;
+    const values = await Promise.all(
+      [
+        'sanguche',
+        'gaseosa',
+        'aderezo',
+        'verdura',
+        'pizza',
+        'hamburguesa',
+        'verdura',
+      ].map(async (category) => {
+        const newCategory = new Category({ name: category });
+        await newCategory.save();
+      }),
+    );
+    console.log(values);
+  } catch (error) {
+    console.error(error);
   }
 };
