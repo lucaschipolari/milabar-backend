@@ -11,7 +11,6 @@ import {
 const app = express();
 createRoles();
 initializeAdmin();
-
 initializeCategory();
 
 app.use(morgan('dev'));
