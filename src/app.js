@@ -2,8 +2,17 @@ import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 import { mainRouter } from './routes/mainRouter.js';
+import {
+  createRoles,
+  initializeAdmin,
+  initializeCategory,
+} from './libs/intialSetup.js';
 
 const app = express();
+createRoles();
+initializeAdmin();
+
+initializeCategory();
 
 app.use(morgan('dev'));
 app.use(express.json());
