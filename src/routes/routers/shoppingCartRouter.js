@@ -2,12 +2,14 @@ import express from 'express';
 import { ShoppingCart } from '../../controllers/shoppingCart/index.js';
 import { post_shoppingCartValidationSchema } from '../../helpers/validationsSchemas/shoppingCartValidation.js';
 import { validateBody } from '../../middlewares/validateBody.js';
+import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
 
 export const shoppingCartRouter = express.Router();
 
 // shoppingCartRouter.get('/', ShoppingCart.GetController.getCart);
 shoppingCartRouter.post(
   '/',
+  isAuthenticated,
   (req, res, next) =>
     validateBody(req, res, next, post_shoppingCartValidationSchema),
   ShoppingCart.PostController.addProductToCart,
