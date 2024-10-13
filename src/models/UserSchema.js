@@ -30,7 +30,8 @@ const userSchema = new mongoose.Schema(
     },
     avatar: {
       type: String,
-      default: 'default-avatar.png', // Usa una ruta relativa en lugar de una URL completa
+      default:
+        'https://static.vecteezy.com/system/resources/previews/000/550/731/original/user-icon-vector.jpg', // Usa una ruta relativa en lugar de una URL completa
     },
     isEnabled: {
       type: Boolean,
