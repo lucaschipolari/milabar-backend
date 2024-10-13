@@ -37,6 +37,8 @@ export const initializeAdmin = async () => {
         email: 'super@admin.com',
         password: hashedPassword,
         roles: [defaultRoleAdmin._id],
+        avatar:
+          'https://static.vecteezy.com/system/resources/previews/009/267/561/original/user-icon-design-free-png.png',
         isEnabled: true,
       });
 
